@@ -13,26 +13,26 @@ public class MyController {
     }
 
     // POST: initially adding clothing piece to the db (clothing attributes...)
-    @GetMapping("/greet/{name}")
-    public String greetByName(@PathVariable String name) {
+    @PostMapping("/clothing")
+    public String addClothing(@PathVariable String color) {
         return "Hello, " + name + "!";
     }
 
     //PUT: updating attributes of the clothing piece (id)
-    @GetMapping("/greet/{name}")
-    public String greetByName(@PathVariable String name) {
+    @GPutMapping("/clothing/{id}")
+    public String updateClothing(@PathVariable String id) {
         return "Hello, " + name + "!";
     }
 
     //DELETE: removing clothing piece from db (id)
-    @GetMapping("/greet/{name}")
-    public String greetByName(@PathVariable String name) {
+    @DeleteMapping("/clothing/{id}")
+    public String removeClothing(@PathVariable String id) {
         return "Hello, " + name + "!";
     }
 
     // GET: getting clothing pieces from the db (id)
     @GetMapping("/clothing/{id}")
-    public String greetByName(@PathVariable String name) {
+    public String getClothing(@PathVariable String id) {
         return "Hello, " + name + "!";
     }
     // Add more methods for other API endpoints as needed
