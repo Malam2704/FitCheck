@@ -1,13 +1,15 @@
-package com.example.FitCheck.api;
+package com.example.FitCheck.controller;
 
 
+import com.example.FitCheck.model.User;
 import org.springframework.web.bind.annotation.*;
+
+import com.example.FitCheck.Service.UserService;
 
 @RestController
 @RequestMapping("/") // Base URL mapping for all endpoints in this controller
 public class UserController {
     UserService service;
-
 
     // POST: adding a user
     @PostMapping("/user/{user}")
