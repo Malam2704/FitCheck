@@ -2,6 +2,7 @@ package com.example.FitCheck.controller;
 
 
 import com.example.FitCheck.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.FitCheck.Service.UserService;
@@ -9,12 +10,13 @@ import com.example.FitCheck.Service.UserService;
 @RestController
 @RequestMapping("/") // Base URL mapping for all endpoints in this controller
 public class UserController {
+    @Autowired
     UserService service;
 
     // POST: adding a user
-    @PostMapping("/user/{user}")
-    public String addUser(@PathVariable User user) {
-        return service.saveUser(user);
+    @PostMapping("/createUser")
+    public String addUser(@RequestBody User user1) {
+        return service.saveUser(user1);
     }
 
     // //PUT: updating attributes of a user
@@ -33,6 +35,11 @@ public class UserController {
     @GetMapping("/userLogin/{username}/{password}")
     public User sayHello(@PathVariable String username, @PathVariable String password) {
         return service.Login(username, password);
+    }
+
+    @GetMapping("/sample")
+    public User sample() {
+        return service.sample();
     }
 
 }

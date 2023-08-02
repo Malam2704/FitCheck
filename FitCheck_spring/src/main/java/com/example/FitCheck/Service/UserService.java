@@ -3,7 +3,9 @@ package com.example.FitCheck.Service;
 import com.example.FitCheck.model.User;
 import com.example.FitCheck.repository.UserRepository;
 import org.springframework.data.annotation.Id;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService {
     private UserRepository userRepository;
 
@@ -11,15 +13,15 @@ public class UserService {
         return "1";
     }
     public String saveUser(User user) {
-        User user1 = User.builder()
-                .id(createId())
-                .username("USERNAME")
-                .password("PASSWORD")
-                .name("NAME")
-                .build();
-
-        userRepository.save(user1);
-        return "";
+//        User user1 = User.builder()
+//                .id(createId())
+//                .username("USERNAME")
+//                .password("PASSWORD")
+//                .name("NAME")
+//                .build();
+//
+//        userRepository.save(user1);
+        return "success";
     }
 
     public String updateUser(User user) {
@@ -34,5 +36,11 @@ public class UserService {
 
     public User Login(String username, String pasword) {
         return null;
+    }
+
+    public User sample() {
+        User sampleU = new User("1","username","password","name");
+
+        return sampleU;
     }
 }
