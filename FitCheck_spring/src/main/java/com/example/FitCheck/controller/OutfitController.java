@@ -1,9 +1,9 @@
-package com.example.FitCheck.api;
+package com.example.FitCheck.controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/") 
-public class outfitController {
+public class OutfitController {
     
     @GetMapping("/idk") 
     public String getOutfit(String outfit) {
@@ -20,7 +20,7 @@ public class outfitController {
         return;
     }
 
-    @DeleteMapping
+    @DeleteMapping("/outfit/delete")
     public void removeOutfit(String outfti) {
         return;
     }
