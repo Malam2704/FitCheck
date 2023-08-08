@@ -1,6 +1,7 @@
 package com.example.FitCheck.controller;
 
 
+import com.example.FitCheck.model.Login;
 import com.example.FitCheck.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +16,8 @@ public class UserController {
 
     // POST: adding a user
     @PostMapping("/createUser")
-    public String addUser(@RequestBody User user1) {
-        return service.saveUser(user1);
+    public String addUser(@RequestBody User user) {
+        return service.saveUser(user);
     }
 
     // //PUT: updating attributes of a user
@@ -26,15 +27,15 @@ public class UserController {
     // }
 
     //DELETE: removing user
-    @DeleteMapping("/userDelete/{user}")
-    public String removeUser(@PathVariable int id) {
-        return "Hello, " + id + "!";
+    @DeleteMapping("/userDelete")
+    public String removeUser(@PathVariable User user) {
+        return service.saveUser(user);
     }
 
     //Getting a user to login
-    @GetMapping("/userLogin/{username}/{password}")
-    public User sayHello(@PathVariable String username, @PathVariable String password) {
-        return service.Login(username, password);
+    @GetMapping("/userLogin")
+    public User sayHello(@PathVariable Login login) {
+        return service.Login(login);
     }
 
     @GetMapping("/sample")

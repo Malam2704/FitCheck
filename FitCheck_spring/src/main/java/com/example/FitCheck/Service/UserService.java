@@ -1,5 +1,6 @@
 package com.example.FitCheck.Service;
 
+import com.example.FitCheck.model.Login;
 import com.example.FitCheck.model.User;
 import com.example.FitCheck.repository.UserRepository;
 import org.springframework.data.annotation.Id;
@@ -13,14 +14,14 @@ public class UserService {
         return "1";
     }
     public String saveUser(User user) {
-//        User user1 = User.builder()
-//                .id(createId())
-//                .username("USERNAME")
-//                .password("PASSWORD")
-//                .name("NAME")
-//                .build();
-//
-//        userRepository.save(user1);
+        User user1 = User.builder()
+                .id(createId())
+                .username("USERNAME")
+                .password("PASSWORD")
+                .name("NAME")
+                .build();
+
+        userRepository.save(user1);
         return "success";
     }
 
@@ -34,7 +35,7 @@ public class UserService {
         return "";
     }
 
-    public User Login(String username, String pasword) {
+    public User Login(Login login) {
         return null;
     }
 
