@@ -1,18 +1,17 @@
-package com.example.FitCheck.model;
+package com.example.FitCheck.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class User {
+public class UserRequest {
     private String id;
     private String username;
     private String password;
     private String name;
-
 }
